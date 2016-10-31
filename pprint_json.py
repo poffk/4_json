@@ -2,12 +2,14 @@ import json
 
 
 def load_data(filepath):
-    pass
+    with open(filepath, encoding='UTF-8') as data_file:
+        return json.load(data_file)
 
 
 def pretty_print_json(data):
-    pass
+    print(json.dumps(data, ensure_ascii=False, sort_keys=True, indent=1))
 
 
 if __name__ == '__main__':
-    pass
+    data = load_data(input('Введите путь до файла: '))
+    pretty_print_json(data)
